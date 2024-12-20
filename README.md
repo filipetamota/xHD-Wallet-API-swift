@@ -4,16 +4,6 @@ A Swift implementation of ARC-0052 Algorand, in accordance with the paper BIP32-
 
 Note that this library has NOT undergone audit and is NOT recommended for production use.
 
-## Git Hooks
-
-This repo comes with git hooks.
-
-Copy the hooks under git-hooks into the .git/hooks/ directory:
-
-```
-cp git-hooks/* .git/hooks/
-```
-
 ## How to Use
 
 NOTE: In the example below we are using the library MnemonicSwift for BIP-39 support. Essentially it can be used to turn a mnemonic of 24 words (corresponding to an _entropy_) into a seed, by running it through a PBKDF2 in accordance with [BIP-39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#from-mnemonic-to-seed). You are free to pick another library or use another method to produce the seed, but BIP-39 is an industry standard.
@@ -112,9 +102,10 @@ let derivedKey = try c.deriveChildNodePublic(extendedKey: walletRoot, index: UIn
 
 and derive the descendant child pk/address at the index specified.
 
+
 ## Requirements
 
-The Package.swift file specifies the minimum version of Swift required to build this library, as well as the minimum versions of the platforms. `.swift-version` also specifies the version for linting.
+The Package.swift file specifies the minimum version of Swift required to build this library, as well as the minimum versions of the platforms.
 
 ## License
 
